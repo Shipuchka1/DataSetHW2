@@ -1,0 +1,34 @@
+﻿<Window x:Class="DataSetHW2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataSetHW2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" FontSize="16">
+            <MenuItem Header="Group" x:Name="GroupMenuItem" Click="GroupMenuItem_Click"></MenuItem>
+            <MenuItem Header="Status" x:Name="StatusMenuItem" Click="MenuItem_Click"></MenuItem>
+            <MenuItem Header="Pavilion" x:Name="PavilionMenuItem" Click="MenuItem_Click"></MenuItem>
+            <MenuItem Header="Model" x:Name="ModelMenuItem" Click="MenuItem_Click"></MenuItem>
+        </Menu>
+        <ListView Grid.Row="1" x:Name="DataListView" >
+            <ListView.View>
+                <GridView x:Name="GW">
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <WrapPanel Grid.Row="2" Visibility="Hidden" x:Name="WrapRadio">
+            <RadioButton Margin="20" x:Name="SqlCommand" GroupName="RadioBtn">SqlCommand</RadioButton>
+            <RadioButton Margin="20" x:Name="DataAdapter" GroupName="RadioBtn">SqlDataAdapter</RadioButton>
+            <Button x:Name="LoadDataButton" Margin="20" Width="100" Height="40" Click="LoadDataButton_Click">Load</Button>
+        </WrapPanel>
+    </Grid>
+</Window>
